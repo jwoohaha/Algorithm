@@ -2,7 +2,7 @@
 
 def get_prime_numbers(n):  # n미만 소수들 리턴
     sieve = [True] * n
-    limit = int(n ** 0.5) + 1 # n제곱근 미만 고려(만약 n보다 작은 어떤 수 m이 m=ab면 a와 b중 적어도 하나는 루트n 이하)
+    limit = int(n ** 0.5) + 1 # n제곱근 이하 고려(만약 n보다 작은 어떤 수 m이 m=ab면 a와 b중 적어도 하나는 루트n 이하)
     for i in range(2, limit):
         if sieve[i] == True:
             for j in range(i*2, n, i):  # i의 배수 지우기
