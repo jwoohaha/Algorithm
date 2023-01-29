@@ -2,6 +2,9 @@
 이후 구간 최대가 아니면 최대를 만날 때 까지 현재 최대 유지
 최대면 남은 구간 중 최대 높이로 (오목한 부분이 없어야 함)
 '''
+from sys import stdin
+input = stdin.readline
+
 N = int(input())  # 기둥의 개수
 pillars = [0] * 1001  # 기둥의 위치
 for n in range(N):
