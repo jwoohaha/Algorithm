@@ -1,3 +1,4 @@
+# dp로 풀면 훨씬 쉽게 가능
 num_length = int(input())
 nums = list(map(int, input().split()))
 
@@ -41,3 +42,4 @@ else:
             cnt = 1
 
     print(max_cnt)
+
