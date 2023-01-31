@@ -43,7 +43,7 @@ default_nums = set([i for i in range(1, 10)])
 ```python
 print('hi', end='\n') 기본 / end='' 줄바꿈 없이
 ```
-- try - catch 입력 에러가 들어왔을 때 동작 중단을 방지
+- try - except 입력 에러가 들어왔을 때 동작 중단을 방지
 ```python
 while True:
     try:
@@ -54,14 +54,17 @@ while True:
 ```
 - tuple로 묶어 list에 추가
 - sort key 활용
+- 
 ```python
 members.append((age, name))
 # [(20, 'Sunyoung'), (21, 'Junkyu'), (21, 'Dohyun')]
 members.sort(key = lambda x : x[0])	# (age, name)에서 age만 비교
 ```
+
 ```python
 
 ```
+
 ```python
 
 ```
