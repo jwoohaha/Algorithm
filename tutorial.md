@@ -38,6 +38,8 @@ default_nums = set([i for i in range(1, 10)])
 
 ```python
 2d_list = [[0]*9 for _ in range(9)]  # 9행 9열
+# 인풋
+2d_input = [list(map(int, input().split())) for _ in range(N)]
 ```
 - print
 ```python
@@ -52,13 +54,14 @@ while True:
         break
     print(a + b)
 ```
-- tuple로 묶어 list에 추가
-- sort key 활용
-- 
+- 정렬 활용
 ```python
 members.append((age, name))
 # [(20, 'Sunyoung'), (21, 'Junkyu'), (21, 'Dohyun')]
-members.sort(key = lambda x : x[0])	# (age, name)에서 age만 비교
+# (age, name)에서 age만 비교
+members.sort(key = lambda x : x[0])	
+# 다른 딕셔너리에서 얻은 값을 기준으로 정렬
+nums.sort(key=lambda x: dict.get(x))
 ```
 
 ```python
