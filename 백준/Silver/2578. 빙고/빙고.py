@@ -1,3 +1,21 @@
+def bingo_simulation(data, mc_call):
+    '''
+    mc가 부르는 수를 0으로 표시하며 빙고 시뮬레이션
+    몇 번째 수를 불렀을 때 빙고인지 리턴
+    '''
+    cnt = 11  # 사회자가 부른 수의 갯수
+    for num in mc_call[11:]:
+        cnt += 1
+        for i in range(5):
+            for j in range(5):
+                # 빙고판에서 사회자가 부른 수 찾기
+                if data[i][j] == num:
+                    # 해당하는 수는 0으로 바꿔줌
+                    data[i][j] = 0
+                    # 빙고이면 카운트 리턴
+                    if check_bingo(data):
+                        return cnt
+
 def check_bingo(data):
     '''
     data로 받은 빙고판에 선이 3개 이상 그어져있는지 판별
@@ -29,28 +47,12 @@ def check_bingo(data):
         status = True
     return status
 
-def bingo_simulation(data, mc_call):
-    '''
-    mc가 부르는 수를 0으로 표시하며 빙고 시뮬레이션
-    몇 번째 수를 불렀을 때 빙고인지 리턴
-    '''
-    cnt = 11  # 사회자가 부른 수의 갯수
-    for num in mc_call[11:]:
-        cnt += 1
-        for i in range(5):
-            for j in range(5):
-                # 빙고판에서 사회자가 부른 수 찾기
-                if data[i][j] == num:
-                    data[i][j] = 0
-                    # 빙고이면 카운트 리턴
-                    if check_bingo(data):
-                        return cnt
 
 data = [list(map(int, input().split())) for _ in range(5)]
 mc_call = []
 for _ in range(5):
     mc_call += list(map(int, input().split()))
-# 기본 세팅(최소 12개 부터 빙고 가능)
+# 기본 세팅으로 초반 수 11개 체크(최소 12개 부터 빙고 가능하기 때문)
 mc_call_11 = mc_call[:11]
 for i in range(5):
     for j in range(5):
